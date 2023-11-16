@@ -11,12 +11,12 @@
 
 bash or windows
 ```
-pip install regex_custom_dict
+pip install regex_custom_dict==0.5
 ```
 
 ## Usage
 ```
-from regex_custom_dict import RegexCustomDict
+from regex_custom_dict.regex_custom_dict import RegexCustomDict
 
 # Create an instance of RegexCustomDict
 my_dict = RegexCustomDict(x={'sde': {'6': 4}}, y=4, xx={'sde': 2, 'sq': 3}, xxx=6.8)
@@ -26,7 +26,7 @@ my_dict = RegexCustomDict(**normal_dict)
 
 # Access keys using regex pattern
 result = my_dict['x+']
-# The output will be a dictionary containing keys that match the provided regex pattern with predefined keys.
+# The output will be a dictionary containing values of the keys that match the provided regex pattern, mapped with predefined keys.
 
 #To flatten the output.
 result = my_dict['x+'].flatten_dict()

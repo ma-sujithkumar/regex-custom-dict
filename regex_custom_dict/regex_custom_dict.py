@@ -43,5 +43,4 @@ class RegexCustomDict(dict):
         else:
             return self.apply_regex_on_key(key)
 
-x=RegexCustomDict(x={'sde':{'6':4}},y=4,xx={'sde':2,'sq':3},xxx=6.8)
-print(x['x+'].flatten_dict())
+
