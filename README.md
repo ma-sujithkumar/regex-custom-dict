@@ -1,6 +1,6 @@
-# RegexDict
+# RegexCustomDict
 
-`RegexDict` is a Python class that extends the built-in `dict` class, allowing you to access dictionary keys using regular expressions.
+`RegexCustomDict` is a Python class that extends the built-in `dict` class, allowing you to access dictionary keys using regular expressions.
 
 ## Features
 
@@ -11,18 +11,18 @@
 
 bash or windows
 ```
-pip install regex_dict
+pip install regex_custom_dict
 ```
 
 ## Usage
 ```
-from regex_dict import RegexDict
+from regex_custom_dict import RegexCustomDict
 
-# Create an instance of RegexDict
-my_dict = RegexDict(x={'sde': {'6': 4}}, y=4, xx={'sde': 2, 'sq': 3}, xxx=6.8)
+# Create an instance of RegexCustomDict
+my_dict = RegexCustomDict(x={'sde': {'6': 4}}, y=4, xx={'sde': 2, 'sq': 3}, xxx=6.8)
 
-#Alternate - you can even convert a normal_dict into a regex_dict
-my_dict = RegexDict(**normal_dict)
+#Alternate - you can even convert a normal_dict into a regex_custom_dict
+my_dict = RegexCustomDict(**normal_dict)
 
 # Access keys using regex pattern
 result = my_dict['x+']
