@@ -5,7 +5,7 @@ with open("README.md","r",encoding="utf-8") as f:
 
 setup(
     name='regex_custom_dict',
-    version='0.5',
+    version='0.6',
     packages=find_packages(),
     install_requires=[],
     long_description=desc,

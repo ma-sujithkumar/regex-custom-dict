@@ -4,15 +4,15 @@ class RegexCustomDict(dict):
     def flatten_dict(self):
         if all(ele.startswith("$$") for ele in super().keys()):
             dict_values=list(super().values())
-            if len(dict_values)==1:
-                return dict_values[0]
+           # if len(dict_values)==1:
+            #    return dict_values[0]
             return dict_values
     
     def apply_regex_on_key(self,key):
         list_all_keys=super().keys()
         if isinstance(key,str):
             re_pattern=re.compile(r'{}'.format(key))
-            list_all_matched_keys=[matched_key for matched_key in list_all_keys if re_pattern.match(matched_key)]
+            list_all_matched_keys=[matched_key for matched_key in list_all_keys if isinstance(matched_key,str) and re_pattern.match(matched_key)]
             value_out_dict=RegexCustomDict()
             for index,matched_key in enumerate(list_all_matched_keys):
                 value=super().__getitem__(matched_key)
@@ -25,7 +25,7 @@ class RegexCustomDict(dict):
             
     def __getitem__(self,key):
         list_all_keys=super().keys()
-        if any(ele.startswith("$$") for ele in list_all_keys):
+        if any(isinstance(ele,str) and ele.startswith("$$") for ele in list_all_keys):
             values=self.flatten_dict()
             if isinstance(values,list) is False:
                 values=[values]
